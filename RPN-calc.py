@@ -1,8 +1,16 @@
+# Stack Class
+class Stack:
+    def __init__(self):     self.list = []
+    def pop(self):          return self.list.pop()
+    def push(self, data):   self.list.append(data)
+    def length(self):       return len(self.list)
+    def print_stack(self):  print([str(x) for x in self.list])
+
 # Create a function that takes in an RPN equation and returns the result
 def calculate_rpn(input):
     input = input.split(' ')
     if len(input) % 2 != 1: return None     # The length should always be odd since there is alwasy 1 more number than operation
-    stack = []
+    stack = Stack()
     calculations = {
         '+':    add,
         '-':    subtract,
@@ -11,10 +19,10 @@ def calculate_rpn(input):
         '**':   exponent
     }
     for each in input:
-        try:    stack.append(float(each))
-        except: stack.append(calculations[each](stack.pop(),stack.pop()))
-    if len(stack) != 1: return None     # Done correctly, there should only be one element left
-    return stack[0]
+        try:    stack.push(float(each))
+        except: stack.push(calculations[each](stack.pop(),stack.pop()))
+    if stack.length() != 1: return None     # Done correctly, there should only be one element left in the list
+    return stack.pop()
 
 """
 Calculation Functions
