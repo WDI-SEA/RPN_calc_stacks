@@ -17,7 +17,7 @@ def calculate_rpn(input):
         else:
             print(new_input[i], 'line 14')
             num2 = int(bin.pop())
-            num1 = int(bin.pop(-1))
+            num1 = int(bin.pop())
             print(num1)
             print(num2)
             if new_input[i] == '+':
@@ -44,37 +44,37 @@ def calculate_rpn(input):
                 bin.append(str(result))
                 print(bin, 'line 41')
                 # recursive_calculate(bin)
-            
+    return int(bin.pop())   
 
-print(calculate_rpn('2 4 +')) 
-print(calculate_rpn('2')) 
-print(calculate_rpn('2 1 -')) 
-print(calculate_rpn('12 4 *')) 
-print(calculate_rpn('12 381 + 111 -')) 
-print(calculate_rpn('1 2 3 + 4 * +'))        
+# print(calculate_rpn('2 4 +')) 
+# print(calculate_rpn('2')) 
+# print(calculate_rpn('2 1 -')) 
+# print(calculate_rpn('12 4 *')) 
+# print(calculate_rpn('12 381 + 111 -')) 
+# print(calculate_rpn('1 2 3 + 4 * +'))        
 # Basic Test
 # if calculate_rpn('2 4 +') == 6: print('✅ Passing for "2 4 +"')
 # else: print('🚫 Not passing for "2 4 +"')
 
-# # Test for single number as input
-# if calculate_rpn('2') == 2: print('✅ Passing for "2"')
-# else: print('🚫 Not passing for "2"')
+# Test for single number as input
+if calculate_rpn('2') == 2: print('✅ Passing for "2"')
+else: print('🚫 Not passing for "2"')
 
-# # Test for subtraction
-# if calculate_rpn('2 1 -') == 1: print('✅ Passing for "2 1 -"')
-# else: print('🚫 Not passing for "2 1 -"')
+# Test for subtraction
+if calculate_rpn('2 1 -') == 1: print('✅ Passing for "2 1 -"')
+else: print('🚫 Not passing for "2 1 -"')
 
-# # Test for 2-digit numbers
-# if calculate_rpn('12 4 *') == 48: print('✅ Passing for "12 4 *"')
-# else: print('🚫 Not passing for "12 4 *"')
+# Test for 2-digit numbers
+if calculate_rpn('12 4 *') == 48: print('✅ Passing for "12 4 *"')
+else: print('🚫 Not passing for "12 4 *"')
 
-# # Test multiple calculations
-# if calculate_rpn('12 381 + 111 -') == 282: print('✅ Passing for "12 381 + 111 -"')
-# else: print('🚫 Not passing for "12 381 + 111 -"')
+# Test multiple calculations
+if calculate_rpn('12 381 + 111 -') == 282: print('✅ Passing for "12 381 + 111 -"')
+else: print('🚫 Not passing for "12 381 + 111 -"')
 
-# # Test multiple calculations
-# if calculate_rpn('1 2 3 + 4 * +') == 21: print('✅ Passing for "1 2 3 + 4 * +"')
-# else: print('🚫 Not passing for "1 2 3 + 4 * +"')
+# Test multiple calculations
+if calculate_rpn('1 2 3 + 4 * +') == 21: print('✅ Passing for "1 2 3 + 4 * +"')
+else: print('🚫 Not passing for "1 2 3 + 4 * +"')
 
 
 
