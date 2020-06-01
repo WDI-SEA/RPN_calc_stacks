@@ -50,7 +50,7 @@ def calculate_rpn(input):
     }
 
     stack =  Stack() 
-    # Invalid input if length is even, there has to be one extra number over operators
+    # Invalid input- if length is even, there has to be one extra number over operators
     inputList = list(input.split(" ")) 
     if(len(inputList)%2 == 0): return None
    
@@ -71,7 +71,7 @@ def calculate_rpn(input):
                 result = operator[each](number2, number1)
                 stack.push(result)
                 # stack.print_stack()
-            except: # This catches even expression which has odd length but not in RPN notation
+            except: # This catches even those expressions which have odd length but not in RPN notation
                   print("Input may be invalid and there is pop error")                 
 
     stack.print_stack()
