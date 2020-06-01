@@ -19,7 +19,6 @@ def calculate_rpn(input):
   stacker = Stack()
   # Split the string input on spaces
   input = input.split(' ')
-  print(input)
   operators = {
     '+': 'add',
     '-': 'subtract',
@@ -32,7 +31,6 @@ def calculate_rpn(input):
     for j in operators.keys():
       if i == j:
         opCheck = True
-        print('op')
         if i == '+':
           stacker.push(float(stacker.pop()) + float(stacker.pop()))
         elif i == '-':
@@ -41,10 +39,10 @@ def calculate_rpn(input):
           stacker.push(float(stacker.pop()) * float(stacker.pop()))
         elif i == '/':
           stacker.push(float(stacker.pop()) / float(stacker.pop()))
-        stacker.print_stack()
     if opCheck == False:
-      print('non op')
       stacker.push(i)
+
+  stacker.print_stack()
 
     # Check if the item is an operator or not
       # If operator: Solve for the operator with the last two numbers (Two pops, then a push) 
