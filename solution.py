@@ -34,7 +34,8 @@ def calculate_rpn(input):
         if i == '+':
           stacker.push(float(stacker.pop()) + float(stacker.pop()))
         elif i == '-':
-          stacker.push(float(stacker.pop()) - float(stacker.pop()))
+          hold = float(stacker.pop())
+          stacker.push(float(stacker.pop()) - hold)
         elif i == '*':
           stacker.push(float(stacker.pop()) * float(stacker.pop()))
         elif i == '/':
@@ -49,6 +50,7 @@ def calculate_rpn(input):
       # If number: Save for later (Push to stack)
   # return the one item remaining on the stack
 
-calculate_rpn('1 2 3 + 4 * +')
+calculate_rpn('12 ')
+
   
 
