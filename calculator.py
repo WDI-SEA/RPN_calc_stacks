@@ -58,7 +58,7 @@ def calculate_rpn(input):
     for each in inputList:
       
         if each not in operator:
-             stack.push(each)
+             stack.push(each)  # or you can do stack.push(float(each))
              
         elif each in operator:
               #  stack.print_stack()
@@ -127,7 +127,7 @@ else: print('🚫 Not passing 3 2 2 + 1 - **')
 if calculate_rpn('5 6 3 / +') == 7: print('✅ Passing for "5 6 3 / +"')
 else: print('🚫 Not passing for "5 6 3 / +"')
 
-
+calculate_rpn('9 - 8 4 +')
 
 
 
